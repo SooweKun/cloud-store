@@ -1,5 +1,5 @@
-import { Footer } from '@/src/components/layouts/footer';
-import { Header } from '@/src/components/layouts/header';
+import { ThemeProvider } from '@/src/components/providers/theme-provider';
+import './globals.css';
 
 export default function RootLayout({
   children,
@@ -7,11 +7,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body className='bg-background'>
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider attribute='class' defaultTheme='dark' disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
