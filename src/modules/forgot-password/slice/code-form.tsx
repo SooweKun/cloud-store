@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
+import { Button } from '@/src/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/src/components/ui/card';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/src/components/ui/form';
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@/src/components/ui/input-otp';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FC } from 'react';

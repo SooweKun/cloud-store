@@ -1,8 +1,8 @@
 'use client';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/src/components/ui/tabs';
 import { useState } from 'react';
 import { CodeForm } from '../slice/code-form';
-import { EmailForm } from '../slice/email-form';
+import { EmailForm } from '../slice/email-from';
 import { PasswordForm } from '../slice/password-form';
 
 // потом можно до колбеков рефакторнуть но будетразделение на компачи да и ваще так лучше читаемость

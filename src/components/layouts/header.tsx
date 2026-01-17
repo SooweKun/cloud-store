@@ -15,9 +15,9 @@ export const Header = () => {
         <Link href=''>File</Link>
       </div>
       <div className='flex gap-[8px] text-white items-center'>
-        <Link href='/auth'>sing in</Link>
+        <Link href='/authorization'>sing in</Link>
         <span className='w-[0.5px] h-[31px] bg-white rounded-2xl' />
-        <p>sing up</p>
+        <Link href='/registration'>sing up</Link>
       </div>
     </div>
   );
