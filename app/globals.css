@@ -15,6 +15,7 @@ body {
 @theme {
   --color-background: #121212;
   --color-d: #6d6d6d;
+  --color-a: #1a1a1a;
   --shadow-grow: 0 0 250px 110px #f861fa;
   --shadow-polinka: 0 0 3px 3px black;
 }

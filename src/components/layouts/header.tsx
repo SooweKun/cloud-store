@@ -13,6 +13,7 @@ export const Header = () => {
         <Link href='/'>Home</Link>
         <Link href=''>About</Link>
         <Link href=''>File</Link>
+        <Link href='/profile'>Profile</Link>
       </div>
       <div className='flex gap-[8px] text-white items-center'>
         <Link href='/authorization'>sing in</Link>
