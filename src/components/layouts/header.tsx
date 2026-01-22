@@ -12,7 +12,7 @@ export const Header = () => {
       <div className='flex gap-[15px] text-white text-[16px]'>
         <Link href='/'>Home</Link>
         <Link href=''>About</Link>
-        <Link href=''>File</Link>
+        <Link href='/files'>Files</Link>
         <Link href='/profile'>Profile</Link>
       </div>
       <div className='flex gap-[8px] text-white items-center'>
