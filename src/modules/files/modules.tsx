@@ -45,6 +45,18 @@ const Arr = [
         image: Test,
         name: 'file name',
       },
+      {
+        image: Test,
+        name: 'file name',
+      },
+      {
+        image: Test,
+        name: 'file name',
+      },
+      {
+        image: Test,
+        name: 'file name',
+      },
     ],
   },
 ];
@@ -55,7 +67,7 @@ export const FilesModule = () => {
       <div className='w-full h-[30px] flex justify-between'>
         <h1>Files()</h1>
       </div>
-      <div className='w-[880px] flex gap-[20px] pl-[30px]'>
+      <div className='w-[1150px] flex gap-[20px] pl-[30px]'>
         {Arr.map(({ created_at, data }) => (
           <div className='flex flex-col gap-[5px]' key={created_at}>
             <p className='text-[14px]'>{created_at}</p>
