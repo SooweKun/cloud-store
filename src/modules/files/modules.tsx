@@ -1,3 +1,4 @@
+import Test2 from '@/src/assets/file-item-test2.jpg';
 import Test from '@/src/assets/file-items-test.png';
 import { Progress } from '@/src/components/ui/progress';
 import { FileItem } from './feature/file-item';
@@ -7,7 +8,7 @@ const Arr = [
     created_at: '22.01.2026',
     data: [
       {
-        image: Test,
+        image: Test2,
         name: 'file name',
         expansion: 'txt',
       },
@@ -147,7 +148,7 @@ export const FilesModule = () => {
             <p className='text-[14px]'>{created_at}</p>
             <div className='flex gap-[20px] flex-wrap'>
               {data.map(({ image, name, expansion }) => (
-                <FileItem image={image} name={name} expansion={expansion} key={name} />
+                <FileItem image={image} name={name} expansion={expansion} key={name} created_at={created_at} />
               ))}
             </div>
           </div>

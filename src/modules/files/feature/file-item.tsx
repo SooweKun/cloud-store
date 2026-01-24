@@ -14,9 +14,10 @@ type Props = {
   image: StaticImageData;
   name: string;
   expansion: string;
+  created_at: string;
 };
 
-export const FileItem: FC<Props> = ({ image, name, expansion }) => {
+export const FileItem: FC<Props> = ({ image, name, expansion, created_at }) => {
   return (
     <Dialog>
       <ContextMenu>
@@ -49,8 +50,25 @@ export const FileItem: FC<Props> = ({ image, name, expansion }) => {
           </ContextMenuGroup>
         </ContextMenuContent>
       </ContextMenu>
-      <DialogContent>
-        <Image src={image} alt='nf' />
+      <DialogContent className='p-0 flex gap-[10px] !max-w-none w-max'>
+        <Image src={image} alt='nf' className='size-[400px] rounded-l-[10px]' />
+        <div className='w-[230px] flex flex-col p-[10px] justify-between'>
+          <div className='flex flex-col gap-[25px] '>
+            <h1>Information</h1>
+            <div>
+              <p>
+                Name: <span>{name}</span>
+              </p>
+              <p>
+                Size: <span>{name}</span>
+              </p>
+              <p>
+                Save as: <span>{created_at}</span>
+              </p>
+            </div>
+          </div>
+          <div className='w-full justify-between flex'></div>
+        </div>
       </DialogContent>
     </Dialog>
   );
