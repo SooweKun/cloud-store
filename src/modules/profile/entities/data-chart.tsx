@@ -4,7 +4,7 @@ import { ChartContainer, type ChartConfig } from '@/src/components/ui/chart';
 import { Label, PolarGrid, PolarRadiusAxis, RadialBar, RadialBarChart } from 'recharts';
 
 const chartData = [{ browser: 'safari', visitors: 1260, fill: '#00C950' }];
-const userSize = 13;
+const userSize = 24.4;
 const totalSize = 50;
 const startAngle = 90;
 const endAngle = startAngle - (userSize / totalSize) * 360;
