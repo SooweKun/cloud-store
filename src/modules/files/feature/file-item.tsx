@@ -1,3 +1,7 @@
+import deleteIco from '@/src/assets/ico/delete-ico.svg';
+import downloadIco from '@/src/assets/ico/download-ico.svg';
+import shareIco from '@/src/assets/ico/share-ico.svg';
+import { Button } from '@/src/components/ui/button';
 import {
   ContextMenu,
   ContextMenuContent,
@@ -21,9 +25,11 @@ export const FileItem: FC<Props> = ({ image, name, expansion, created_at }) => {
   return (
     <Dialog>
       <ContextMenu>
-        <ContextMenuTrigger className='flex flex-col justify-start cursor-pointer' asChild>
+        <ContextMenuTrigger className='flex flex-col items-start cursor-pointer' asChild>
           <DialogTrigger>
-            <Image src={image} alt='nf' className='w-[90px] h-[90px] rounded-[8px]' />
+            <div className={`w-[90px] h-[90px] flex justify-center items-center bg-a rounded-[8px] ${expansion === 'png' ? 'p-0' : 'p-[20px]'}`}>
+              <Image src={image} alt='nf' className='w-[90px] h-[90px] rounded-[8px]' />
+            </div>
             <p className='pl-[5px] text-[10px]'>
               {name}.{expansion}
             </p>
@@ -51,7 +57,7 @@ export const FileItem: FC<Props> = ({ image, name, expansion, created_at }) => {
         </ContextMenuContent>
       </ContextMenu>
       <DialogContent className='p-0 flex gap-[10px] !max-w-none w-max'>
-        <Image src={image} alt='nf' className='size-[400px] rounded-l-[10px]' />
+        <Image src={image} alt='nf' className={`size-[400px] rounded-l-[10px] ${expansion === 'png' ? 'p-0' : 'p-10'}`} />
         <div className='w-[230px] flex flex-col p-[10px] justify-between'>
           <div className='flex flex-col gap-[25px] '>
             <h1>Information</h1>
@@ -67,7 +73,19 @@ export const FileItem: FC<Props> = ({ image, name, expansion, created_at }) => {
               </p>
             </div>
           </div>
-          <div className='w-full justify-between flex'></div>
+          <div className='w-full justify-between flex'>
+            <Button className='p-[14px] ' variant='ghost'>
+              <Image src={deleteIco} alt='nf' />
+            </Button>
+            <div className='flex gap-[10px]'>
+              <Button className='p-[14px] ' variant='ghost'>
+                <Image src={shareIco} alt='nf' />
+              </Button>
+              <Button className='p-[14px] ' variant='ghost'>
+                <Image src={downloadIco} alt='nf' />
+              </Button>
+            </div>
+          </div>
         </div>
       </DialogContent>
     </Dialog>

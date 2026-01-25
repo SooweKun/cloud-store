@@ -1,7 +1,9 @@
 import Test2 from '@/src/assets/file-item-test2.jpg';
 import Test from '@/src/assets/file-items-test.png';
+import mdIco from '@/src/assets/ico/md-ico.svg';
 import { Progress } from '@/src/components/ui/progress';
 import { FileItem } from './feature/file-item';
+import { SelectType } from './feature/select-type';
 
 const Arr = [
   {
@@ -10,127 +12,17 @@ const Arr = [
       {
         image: Test2,
         name: 'file name',
-        expansion: 'txt',
+        expansion: 'png',
       },
       {
         image: Test,
         name: 'file name',
-        expansion: 'txt',
+        expansion: 'png',
       },
       {
-        image: Test,
+        image: mdIco,
         name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-    ],
-  },
-  {
-    created_at: '22.01.2026',
-    data: [
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
-      },
-      {
-        image: Test,
-        name: 'file name',
-        expansion: 'txt',
+        expansion: 'md',
       },
     ],
   },
@@ -141,6 +33,9 @@ export const FilesModule = () => {
     <div className='w-[1200px] h-[550px] bg-[#272727] rounded-[10px] p-[15px] pb-0 flex flex-col'>
       <div className='w-full h-[30px] flex justify-between'>
         <h1>Files()</h1>
+        <div className='flex gap-[30px]'>
+          <SelectType />
+        </div>
       </div>
       <div className='w-[1150px] flex flex-col flex-1 gap-[20px] pl-[30px] overflow-y-auto mt-[40px]'>
         {Arr.map(({ created_at, data }) => (
