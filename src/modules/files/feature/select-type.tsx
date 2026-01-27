@@ -9,7 +9,7 @@ export function SelectType() {
     <Combobox items={filetype}>
       <ComboboxInput placeholder='Select a type' className='w-[120px] h-[25px] bg-[#343434] rounded-[10px] [&_input]:text-[12px]' />
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty className='text-[12px]'>No items found.</ComboboxEmpty>
         <ComboboxList className='bg-[#343434]'>
           {(item) => (
             <ComboboxItem key={item} value={item} className='text-[12px]'>

@@ -1,6 +1,8 @@
 import Test2 from '@/src/assets/file-item-test2.jpg';
 import Test from '@/src/assets/file-items-test.png';
 import mdIco from '@/src/assets/ico/md-ico.svg';
+import { DatePicker } from '@/src/components/ui/date-picker';
+import { Input } from '@/src/components/ui/input';
 import { Progress } from '@/src/components/ui/progress';
 import { FileItem } from './feature/file-item';
 import { SelectType } from './feature/select-type';
@@ -34,7 +36,9 @@ export const FilesModule = () => {
       <div className='w-full h-[30px] flex justify-between'>
         <h1>Files()</h1>
         <div className='flex gap-[30px]'>
+          <DatePicker />
           <SelectType />
+          <Input className='w-[330px] h-[25px]' placeholder='enter file name' />
         </div>
       </div>
       <div className='w-[1150px] flex flex-col flex-1 gap-[20px] pl-[30px] overflow-y-auto mt-[40px]'>
