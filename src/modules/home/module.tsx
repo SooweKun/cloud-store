@@ -31,11 +31,11 @@ export const HomeModule = () => {
     <div className='w-full flex gap-[30px] justify-center items-center'>
       <div className='flex flex-col gap-[20px]'>
         <div className='flex gap-[30px]'>
-          <div className='w-[350px] h-[170px] bg-[#272727] rounded-[10px]' />
-          <div className='w-[350px] h-[170px] bg-[#272727] rounded-[10px]' />
-          <div className='w-[350px] h-[170px] bg-[#272727] rounded-[10px]' />
+          <div className='min-w-[240px] w-full max-w-[350px] min-h-[125px] h-full max-h-[170px] bg-[#272727] rounded-[10px]' />
+          <div className='min-w-[240px] w-full max-w-[350px] min-h-[125px] h-full max-h-[170px] bg-[#272727] rounded-[10px]' />
+          <div className='min-w-[240px] w-full max-w-[350px] min-h-[125px] h-full max-h-[170px] bg-[#272727] rounded-[10px]' />
         </div>
-        <div className='w-[1110px] h-[480px] bg-[#272727] rounded-[10px] p-[15px] pb-0 flex flex-col gap-[25px]'>
+        <div className='min-w-[740px] w-full max-w-[1110px] min-h-[390px] h-full max-h-[480px] bg-[#272727] rounded-[10px] p-[15px] pb-0 flex flex-col gap-[25px]'>
           <div className='w-full h-[30px] flex justify-between'>
             <div className='flex flex-col gap-0'>
               <h1 className='text-[20px]'>Recents Files</h1>
@@ -57,8 +57,8 @@ export const HomeModule = () => {
         </div>
       </div>
       <div className='flex flex-col gap-[20px]'>
-        <div className='w-[350px] h-[430px] bg-[#272727] rounded-[10px]' />
-        <div className='w-[350px] h-[220px] bg-[#272727] rounded-[10px]' />
+        <div className='min-w-[290px] w-full max-w-[350px] min-h-[320px] h-full max-h-[430px] bg-[#272727] rounded-[10px]' />
+        <div className='min-w-[290px] w-full max-w-[350px] h-[200px] bg-[#272727] rounded-[10px]' />
       </div>
     </div>
   );

@@ -27,8 +27,9 @@ export const FileItem: FC<Props> = ({ image, name, expansion, created_at }) => {
       <ContextMenu>
         <ContextMenuTrigger className='flex flex-col items-start cursor-pointer' asChild>
           <DialogTrigger>
-            <div className={`w-[90px] h-[90px] flex justify-center items-center bg-a rounded-[8px] ${expansion === 'png' ? 'p-0' : 'p-[20px]'}`}>
-              <Image src={image} alt='nf' className='w-[90px] h-[90px] rounded-[8px]' />
+            <div
+              className={`w-[90px] h-[90px] lg:w-[70px] lg:h-[70px] flex justify-center items-center bg-a rounded-[8px] ${expansion === 'png' ? 'p-0' : 'p-[20px]'}`}>
+              <Image src={image} alt='nf' className='w-[90px] h-[90px] lg:w-[70px] lg:h-[70px] rounded-[8px]' />
             </div>
             <p className='pl-[5px] text-[10px]'>
               {name}.{expansion}
