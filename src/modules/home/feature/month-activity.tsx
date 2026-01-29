@@ -1,3 +1,5 @@
+import { MonthActivityItem } from './month-activity-item';
+
 const Arr = [
   {
     id: 1,
@@ -110,7 +112,7 @@ const Arr = [
     activity: 0,
   },
   {
-    id: 22,
+    id: 23,
     bg: '#006239',
     activity: 3,
   },
@@ -121,20 +123,20 @@ export const MonthActivity = () => {
   const afterline = Arr.slice(3);
 
   return (
-    <div className='lg:w-[245px] w-full max-w-[350px] lg:h-[125px] h-full max-h-[170px] bg-[#272727] rounded-[10px] p-[15px] flex flex-col gap-[5px]'>
+    <div className='w-[245px] 2xl:w-[350px] h-[125px] 2xl:h-[170px] bg-[#272727] rounded-[10px] p-[15px] flex flex-col gap-[5px]'>
       <div className='flex justify-between items-end'>
         <h1 className='flex flex-col text-[14px] w-max'>
           Month activity <span className='text-[10px] pl-2'>data on 09.01.26</span>
         </h1>
-        <div className='flex gap-[10px]'>
-          {firstline.map(({ id, bg }) => (
-            <div className='w-[15px] h-[15px] rounded-[5px]' key={id} style={{ backgroundColor: bg }} />
+        <div className='flex gap-[10px] 2xl:pr-[15px]'>
+          {firstline.map(({ id, bg, activity }) => (
+            <MonthActivityItem key={id} bg={bg} activity={activity} />
           ))}
         </div>
       </div>
-      <div className='w-fit h-full flex flex-wrap gap-x-[10px] lg:gap-y-[5px]'>
-        {afterline.map(({ id, bg }) => (
-          <div className='w-[15px] h-[15px] rounded-[5px]' key={id} style={{ backgroundColor: bg }} />
+      <div className='w-fit h-full flex flex-wrap gap-x-[10px] gap-y-[5px] 2xl:gap-[10px]'>
+        {afterline.map(({ id, bg, activity }) => (
+          <MonthActivityItem key={id} bg={bg} activity={activity} />
         ))}
       </div>
     </div>
