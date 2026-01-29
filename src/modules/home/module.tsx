@@ -2,6 +2,7 @@ import Test2 from '@/src/assets/file-item-test2.jpg';
 import Test from '@/src/assets/file-items-test.png';
 import mdIco from '@/src/assets/ico/md-ico.svg';
 import { FileItem } from '../files/feature/file-item';
+import { MonthActivity } from './feature/month-activity';
 
 const Arr = [
   {
@@ -31,9 +32,9 @@ export const HomeModule = () => {
     <div className='w-full flex gap-[30px] justify-center items-center'>
       <div className='flex flex-col gap-[20px]'>
         <div className='flex gap-[30px]'>
-          <div className='min-w-[240px] w-full max-w-[350px] min-h-[125px] h-full max-h-[170px] bg-[#272727] rounded-[10px]' />
-          <div className='min-w-[240px] w-full max-w-[350px] min-h-[125px] h-full max-h-[170px] bg-[#272727] rounded-[10px]' />
-          <div className='min-w-[240px] w-full max-w-[350px] min-h-[125px] h-full max-h-[170px] bg-[#272727] rounded-[10px]' />
+          <MonthActivity />
+          <div className='lg:w-[245px] w-full max-w-[350px] min-h-[125px] h-full max-h-[170px] bg-[#272727] rounded-[10px]' />
+          <div className='lg:w-[245px] w-full max-w-[350px] min-h-[125px] h-full max-h-[170px] bg-[#272727] rounded-[10px]' />
         </div>
         <div className='min-w-[740px] w-full max-w-[1110px] min-h-[390px] h-full max-h-[480px] bg-[#272727] rounded-[10px] p-[15px] pb-0 flex flex-col gap-[25px]'>
           <div className='w-full h-[30px] flex justify-between'>
