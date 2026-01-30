@@ -2,61 +2,22 @@ import deleteIco from '@/src/assets/ico/delete-ico.svg';
 import downloadIco from '@/src/assets/ico/download-ico.svg';
 import shareIco from '@/src/assets/ico/share-ico.svg';
 import { Button } from '@/src/components/ui/button';
-import {
-  ContextMenu,
-  ContextMenuContent,
-  ContextMenuGroup,
-  ContextMenuItem,
-  ContextMenuShortcut,
-  ContextMenuTrigger,
-} from '@/src/components/ui/context-menu';
 import { Dialog, DialogContent, DialogTrigger } from '@/src/components/ui/dialog';
 import Image, { StaticImageData } from 'next/image';
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 type Props = {
+  children: ReactNode;
   image: StaticImageData;
-  name: string;
   expansion: string;
   created_at: string;
+  name: string;
 };
 
-export const FileItem: FC<Props> = ({ image, name, expansion, created_at }) => {
+export const FileModal: FC<Props> = ({ children, image, expansion, created_at, name }) => {
   return (
     <Dialog>
-      <ContextMenu>
-        <ContextMenuTrigger className='flex flex-col items-start cursor-pointer' asChild>
-          <DialogTrigger>
-            <div
-              className={`w-[90px] h-[90px] lg:w-[70px] lg:h-[70px] flex justify-center items-center bg-a rounded-[8px] ${expansion === 'png' ? 'p-0' : 'p-[20px]'}`}>
-              <Image src={image} alt='nf' className='w-[90px] h-[90px] lg:w-[70px] lg:h-[70px] rounded-[8px]' />
-            </div>
-            <p className='pl-[5px] text-[10px]'>
-              {name}.{expansion}
-            </p>
-          </DialogTrigger>
-        </ContextMenuTrigger>
-        <ContextMenuContent className='w-20'>
-          <ContextMenuGroup>
-            <ContextMenuItem>
-              Download
-              <ContextMenuShortcut>⌘[</ContextMenuShortcut>
-            </ContextMenuItem>
-            <ContextMenuItem>
-              Share
-              <ContextMenuShortcut>⌘]</ContextMenuShortcut>
-            </ContextMenuItem>
-            <ContextMenuItem>
-              Star
-              <ContextMenuShortcut>⌘]</ContextMenuShortcut>
-            </ContextMenuItem>
-            <ContextMenuItem>
-              <p className='text-red-400'>Delete</p>
-              <ContextMenuShortcut>⌘]</ContextMenuShortcut>
-            </ContextMenuItem>
-          </ContextMenuGroup>
-        </ContextMenuContent>
-      </ContextMenu>
+      <DialogTrigger>{children}</DialogTrigger>
       <DialogContent className='p-0 flex gap-[10px] !max-w-none w-max'>
         <Image src={image} alt='nf' className={`size-[400px] rounded-l-[10px] ${expansion === 'png' ? 'p-0' : 'p-10'}`} />
         <div className='w-[230px] flex flex-col p-[10px] justify-between'>

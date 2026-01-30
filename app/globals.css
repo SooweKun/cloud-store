@@ -12,6 +12,10 @@ body {
   font-family: Alata;
 }
 
+.clip {
+  clip-path: polygon(0 0, 35% 0, 48% 28%, 100% 28%, 100% 100%, 0 100%);
+}
+
 @theme {
   --color-background: #121212;
   --color-d: #6d6d6d;

@@ -1,7 +1,10 @@
 import Test2 from '@/src/assets/file-item-test2.jpg';
 import Test from '@/src/assets/file-items-test.png';
+import homeBanner from '@/src/assets/home-banner.png';
 import mdIco from '@/src/assets/ico/md-ico.svg';
-import { FileItem } from '../files/feature/file-item';
+import markIco from '@/src/assets/mark.svg';
+import { FileItem } from '@/src/components/flows/file-item';
+import Image from 'next/image';
 import { MonthActivity } from './feature/month-activity';
 
 const Arr = [
@@ -34,7 +37,15 @@ export const HomeModule = () => {
         <div className='flex gap-[30px]'>
           <MonthActivity />
           <div className='w-[245px] 2xl:w-[350px] 2xl:h-[170px] bg-[#272727] rounded-[10px]' />
-          <div className='w-[245px] 2xl:w-[350px] 2xl:h-[170px] bg-[#272727] rounded-[10px]' />
+          <div className='w-[245px] 2xl:w-[350px] 2xl:h-[170px] rounded-[10px] flex items-end relative overflow-hidden cursor-pointer'>
+            <Image src={markIco} alt='nf' className='absolute top-[11px] right-[11px] cursor-pointer' />
+
+            <Image src={homeBanner} alt='nf' className='w-full h-full' />
+            <div className='clip w-[250px] h-[75px] 2xl:h-[115px] bg-a pl-[10px] p-[5px] pl-[10px] pr-[15px] absolute bottom-[-1px] left-[-2px] flex flex-col gap-[5px] font-light'>
+              <h1 className='text-[12px] flex w-max'>New Features</h1>
+              <p className='text-[10px]'>This year we are offering even more functionality and activities for our users.</p>
+            </div>
+          </div>
         </div>
         <div className='w-full h-[390px] 2xl:h-[480px] bg-[#272727] rounded-[10px] p-[15px] pb-0 flex flex-col gap-[25px]'>
           <div className='w-full h-[30px] flex justify-between'>

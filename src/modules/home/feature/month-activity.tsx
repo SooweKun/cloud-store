@@ -1,3 +1,5 @@
+import markIco from '@/src/assets/mark.svg';
+import Image from 'next/image';
 import { MonthActivityItem } from './month-activity-item';
 
 const Arr = [
@@ -123,7 +125,8 @@ export const MonthActivity = () => {
   const afterline = Arr.slice(3);
 
   return (
-    <div className='w-[245px] 2xl:w-[350px] h-[125px] 2xl:h-[170px] bg-[#272727] rounded-[10px] p-[15px] flex flex-col gap-[5px]'>
+    <div className='w-[245px] 2xl:w-[350px] h-[125px] 2xl:h-[170px] bg-[#272727] rounded-[10px] p-[15px] flex flex-col gap-[5px] relative'>
+      <Image src={markIco} alt='nf' className='absolute top-[11px] right-[11px] cursor-pointer' />
       <div className='flex justify-between items-end'>
         <h1 className='flex flex-col text-[14px] w-max'>
           Month activity <span className='text-[10px] pl-2'>data on 09.01.26</span>

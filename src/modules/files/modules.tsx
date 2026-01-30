@@ -1,10 +1,10 @@
 import Test2 from '@/src/assets/file-item-test2.jpg';
 import Test from '@/src/assets/file-items-test.png';
 import mdIco from '@/src/assets/ico/md-ico.svg';
+import { FileItem } from '@/src/components/flows/file-item';
 import { DatePicker } from '@/src/components/ui/date-picker';
 import { Input } from '@/src/components/ui/input';
 import { Progress } from '@/src/components/ui/progress';
-import { FileItem } from './feature/file-item';
 import { SelectType } from './feature/select-type';
 
 const Arr = [
