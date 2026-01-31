@@ -8,7 +8,7 @@ import { DatePicker } from '@/src/components/ui/date-picker';
 import { Input } from '@/src/components/ui/input';
 import { Progress } from '@/src/components/ui/progress';
 import Image, { StaticImageData } from 'next/image';
-import { FileContainer } from './feature/file-container';
+import { FileContainer } from '../../components/flows/file-container';
 import { SelectType } from './feature/select-type';
 
 type FileItem = {
@@ -47,7 +47,7 @@ const Arr: FileGroup[] = [
 
 export const FilesModule = () => {
   return (
-    <div className='w-[1200px] h-[550px] bg-[#272727] rounded-[10px] p-[15px] pb-0 flex flex-col'>
+    <div className='w-[1200px] h-[550px] bg-[#272727] rounded-[10px] p-[15px] pb-0 flex flex-col justify-between'>
       <div className='w-full h-[30px] flex justify-between'>
         <h1>Files()</h1>
         <div className='flex gap-[30px]'>
