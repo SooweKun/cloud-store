@@ -1,13 +1,28 @@
 import Test2 from '@/src/assets/file-item-test2.jpg';
 import Test from '@/src/assets/file-items-test.png';
 import mdIco from '@/src/assets/ico/md-ico.svg';
-import { FileItem } from '@/src/components/flows/file-item';
+import newFileIco from '@/src/assets/ico/new-file-ico.svg';
+import newFolderIco from '@/src/assets/ico/new-folder-ico.svg';
+import { Button } from '@/src/components/ui/button';
 import { DatePicker } from '@/src/components/ui/date-picker';
 import { Input } from '@/src/components/ui/input';
 import { Progress } from '@/src/components/ui/progress';
+import Image, { StaticImageData } from 'next/image';
+import { FileContainer } from './feature/file-container';
 import { SelectType } from './feature/select-type';
 
-const Arr = [
+type FileItem = {
+  image: StaticImageData;
+  name: string;
+  expansion: string;
+};
+
+export type FileGroup = {
+  created_at: string;
+  data: FileItem[];
+};
+
+const Arr: FileGroup[] = [
   {
     created_at: '22.01.2026',
     data: [
@@ -41,22 +56,19 @@ export const FilesModule = () => {
           <Input className='w-[330px] h-[25px]' placeholder='enter file name' />
         </div>
       </div>
-      <div className='w-[1150px] flex flex-col flex-1 gap-[20px] pl-[30px] overflow-y-auto mt-[40px]'>
-        {Arr.map(({ created_at, data }) => (
-          <div className='flex flex-col gap-[5px]' key={created_at}>
-            <p className='text-[14px]'>{created_at}</p>
-            <div className='flex gap-[20px] flex-wrap'>
-              {data.map(({ image, name, expansion }) => (
-                <FileItem image={image} name={name} expansion={expansion} key={name} created_at={created_at} />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className='w-full h-[45px] flex px-[5px] items-center'>
+      <FileContainer Arr={Arr} />
+      <div className='w-full h-[45px] flex px-[5px] items-center flex justify-between'>
         <div className='flex flex-col items-center gap-[5px]'>
           <Progress className='w-[100px] h-[6px] bg-[#6D6D6D]' value={47} indicatorClassName='bg-[#35AA75]' />
           <p className='text-xs'>storage 47%</p>
+        </div>
+        <div className='flex gap-[10px]'>
+          <Button className='p-3 hover:bg-a bg-transparent size-[35px]' variant='default'>
+            <Image src={newFolderIco} alt='nf' />
+          </Button>
+          <Button className='p-3 hover:bg-a bg-transparent size-[35px]' variant='default'>
+            <Image src={newFileIco} alt='nf' />
+          </Button>
         </div>
       </div>
     </div>
