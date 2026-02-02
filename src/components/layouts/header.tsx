@@ -1,8 +1,11 @@
 import logoIco from '@/src/assets/ico/logo-ico.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { HeaderAvatar } from '../feature/header-avatar';
 
 export const Header = () => {
+  const Auth = true;
+
   return (
     <div className='w-full h-[65px] bg-background overflow-hidden flex px-[70px] justify-between items-center'>
       <Link href='/' className='flex text-white items-end text-lg'>
@@ -16,9 +19,15 @@ export const Header = () => {
         <Link href='/profile'>Profile</Link>
       </div>
       <div className='flex gap-[8px] text-white items-center'>
-        <Link href='/authorization'>sing in</Link>
-        <span className='w-[0.5px] h-[31px] bg-white rounded-2xl' />
-        <Link href='/registration'>sing up</Link>
+        {Auth ? (
+          <HeaderAvatar />
+        ) : (
+          <>
+            <Link href='/authorization'>sing in</Link>
+            <span className='w-[0.5px] h-[31px] bg-white rounded-2xl' />
+            <Link href='/registration'>sing up</Link>
+          </>
+        )}
       </div>
     </div>
   );
