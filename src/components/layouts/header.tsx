@@ -14,9 +14,9 @@ export const Header = () => {
       </Link>
       <div className='flex gap-[15px] text-white text-[16px]'>
         <Link href='/'>Home</Link>
-        <Link href=''>About</Link>
         <Link href='/files'>Files</Link>
         <Link href='/profile'>Profile</Link>
+        <Link href='/settings'>Settings</Link>
       </div>
       <div className='flex gap-[8px] text-white items-center'>
         {Auth ? (
