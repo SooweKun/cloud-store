@@ -14,7 +14,8 @@ import { SelectType } from './feature/select-type';
 type FileItem = {
   image: StaticImageData;
   name: string;
-  expansion: string;
+  expansion?: string;
+  files?: FileItem[];
 };
 
 export type FileGroup = {
@@ -40,6 +41,17 @@ const Arr: FileGroup[] = [
         image: mdIco,
         name: 'file name',
         expansion: 'md',
+      },
+      {
+        image: Test2,
+        name: 'folder',
+        files: [
+          {
+            image: mdIco,
+            name: 'file name',
+            expansion: 'md',
+          },
+        ],
       },
     ],
   },

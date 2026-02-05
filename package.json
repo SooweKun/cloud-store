@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",
+    "@fingerprintjs/fingerprintjs-pro-react": "^2.7.1",
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-context-menu": "^2.2.16",
     "@radix-ui/react-dialog": "^1.1.15",

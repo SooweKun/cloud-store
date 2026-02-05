@@ -9,7 +9,7 @@ import { FC, ReactNode } from 'react';
 type Props = {
   children: ReactNode;
   image: StaticImageData;
-  expansion: string;
+  expansion?: string;
   created_at: string;
   name: string;
 };

@@ -13,7 +13,7 @@ import { FileModal } from './file-modal';
 type Props = {
   image: StaticImageData;
   name: string;
-  expansion: string;
+  expansion?: string;
   created_at: string;
 };
 
