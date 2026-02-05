@@ -18,19 +18,27 @@ type Props = {
 };
 
 export const FileItem: FC<Props> = ({ image, name, expansion, created_at }) => {
+  const content = (
+    <>
+      <div
+        className={`w-[90px] h-[90px] lg:w-[70px] lg:h-[70px] flex justify-center items-center bg-a rounded-[8px] ${expansion === 'png' ? 'p-0' : 'p-[20px]'}`}>
+        <Image src={image} alt='nf' className='w-[90px] h-[90px] lg:w-[70px] lg:h-[70px] rounded-[8px]' />
+      </div>
+      <p className='pl-[5px] text-[10px]'>
+        {name}.{expansion}
+      </p>
+    </>
+  );
+
   return (
     <ContextMenu>
-      <FileModal image={image} name={name} expansion={expansion} created_at={created_at}>
-        <ContextMenuTrigger className='flex flex-col items-start cursor-pointer'>
-          <div
-            className={`w-[90px] h-[90px] lg:w-[70px] lg:h-[70px] flex justify-center items-center bg-a rounded-[8px] ${expansion === 'png' ? 'p-0' : 'p-[20px]'}`}>
-            <Image src={image} alt='nf' className='w-[90px] h-[90px] lg:w-[70px] lg:h-[70px] rounded-[8px]' />
-          </div>
-          <p className='pl-[5px] text-[10px]'>
-            {name}.{expansion}
-          </p>
-        </ContextMenuTrigger>
-      </FileModal>
+      {expansion === 'folder' ? (
+        <ContextMenuTrigger className='flex flex-col items-start cursor-pointer'>{content}</ContextMenuTrigger>
+      ) : (
+        <FileModal image={image} name={name} expansion={expansion} created_at={created_at}>
+          <ContextMenuTrigger className='flex flex-col items-start cursor-pointer'>{content}</ContextMenuTrigger>
+        </FileModal>
+      )}
       <ContextMenuContent className='w-20'>
         <ContextMenuGroup>
           <ContextMenuItem>
