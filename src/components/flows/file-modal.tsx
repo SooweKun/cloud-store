@@ -2,7 +2,7 @@ import deleteIco from '@/src/assets/ico/delete-ico.svg';
 import downloadIco from '@/src/assets/ico/download-ico.svg';
 import shareIco from '@/src/assets/ico/share-ico.svg';
 import { Button } from '@/src/components/ui/button';
-import { Dialog, DialogContent, DialogTrigger } from '@/src/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from '@/src/components/ui/dialog';
 import Image, { StaticImageData } from 'next/image';
 import { FC, ReactNode } from 'react';
 
@@ -17,8 +17,11 @@ type Props = {
 export const FileModal: FC<Props> = ({ children, image, expansion, created_at, name }) => {
   return (
     <Dialog>
-      <DialogTrigger>{children}</DialogTrigger>
+      <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className='p-0 flex gap-[10px] !max-w-none w-max'>
+        <DialogTitle className='sr-only'>File: {name}</DialogTitle>
+        <DialogDescription className='sr-only'>File details and actions</DialogDescription>
+
         <Image src={image} alt='nf' className={`size-[400px] rounded-l-[10px] ${expansion === 'png' ? 'p-0' : 'p-10'}`} />
         <div className='w-[230px] flex flex-col p-[10px] justify-between'>
           <div className='flex flex-col gap-[25px] '>

@@ -11,16 +11,24 @@ export const FileContainer: FC<Props> = ({ Arr }) => {
   return (
     <FileContext>
       <div className='w-full h-[390px] 2xl:h-[480px] bg-[#272727] rounded-[10px] p-[15px] pb-0 flex flex-col gap-[25px]'>
-        {Arr.map(({ created_at, data }) => (
-          <div className='flex flex-col gap-[5px]' key={created_at}>
-            <p className='text-[14px]'>{created_at}</p>
-            <div className='flex gap-[20px] flex-wrap'>
-              {data.map(({ image, name, expansion }) => (
-                <FileItem image={image} name={name} expansion={expansion} key={name} created_at={created_at} />
-              ))}
+        {Arr.map(({ created_at, data }) => {
+          const sortData = data.sort((a, b) => {
+            if (a.expansion === 'folder' && b.expansion !== 'folder') return -1;
+            if (a.expansion !== 'folder' && b.expansion === 'folder') return 1;
+            return 0;
+          });
+
+          return (
+            <div className='flex flex-col gap-[5px]' key={created_at}>
+              <p className='text-[14px]'>{created_at}</p>
+              <div className='flex gap-[20px] flex-wrap'>
+                {sortData.map(({ image, name, expansion }) => (
+                  <FileItem image={image} name={name} expansion={expansion} key={name} created_at={created_at} />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </FileContext>
   );
