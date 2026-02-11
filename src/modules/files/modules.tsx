@@ -12,7 +12,7 @@ import Image, { StaticImageData } from 'next/image';
 import { FileContainer } from '../../components/flows/file-container';
 import { SelectType } from './feature/select-type';
 
-type FileItem = {
+export type FileItem = {
   image: StaticImageData;
   name: string;
   expansion?: string;
