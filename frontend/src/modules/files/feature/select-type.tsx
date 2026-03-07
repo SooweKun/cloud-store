@@ -1,5 +1,3 @@
-'use client';
-
 import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from '@src/components/ui/combobox';
 
 const filetype = ['png', 'svg', 'md', 'text', 'webp'] as const;

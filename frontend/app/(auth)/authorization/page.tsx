@@ -1,4 +1,4 @@
-import { AuthorizationModule } from '@/frontend/src/modules/authorization/module';
+import { AuthorizationModule } from '@src/modules/authorization/module';
 
 export default function AuthorizationPage() {
   return (

@@ -1,5 +1,5 @@
 'use client';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/frontend/src/components/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@src/components/ui/tabs';
 import { useState } from 'react';
 import { CodeForm } from '../slice/code-form';
 import { EmailForm } from '../slice/email-from';

@@ -1,4 +1,4 @@
-import { ProfileModule } from '@/frontend/src/modules/profile/module';
+import { ProfileModule } from '@src/modules/profile/module';
 
 export default function Profile() {
   return (

@@ -1,4 +1,4 @@
-import { SettingsModule } from '@/frontend/src/modules/settings/module';
+import { SettingsModule } from '@src/modules/settings/module';
 
 export default function Settings() {
   return (

@@ -1,4 +1,4 @@
-import { FilesModule } from '@/frontend/src/modules/files/modules';
+import { FilesModule } from '@src/modules/files/modules';
 
 export default function Files() {
   return (

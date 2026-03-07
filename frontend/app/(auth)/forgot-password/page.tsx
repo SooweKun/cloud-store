@@ -1,4 +1,4 @@
-import { ForgotPasswordModule } from '@/frontend/src/modules/forgot-password/module';
+import { ForgotPasswordModule } from '@src/modules/forgot-password/module';
 
 export default function ForgotPasswordPage() {
   return (

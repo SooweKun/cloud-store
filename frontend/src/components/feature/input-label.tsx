@@ -1,5 +1,5 @@
-import { Input } from '@/frontend/src/components/ui/input';
-import { Label } from '@/frontend/src/components/ui/label';
+import { Input } from '@src/components/ui/input';
+import { Label } from '@src/components/ui/label';
 import Link from 'next/link';
 
 type Props = {

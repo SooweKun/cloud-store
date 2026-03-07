@@ -1,8 +1,8 @@
 'use client';
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { InputWithLabel } from '@/frontend/src/components/feature/input-label';
-import { Button } from '@/frontend/src/components/ui/button';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { InputWithLabel } from '@src/components/feature/input-label';
+import { Button } from '@src/components/ui/button';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod/v4';
 

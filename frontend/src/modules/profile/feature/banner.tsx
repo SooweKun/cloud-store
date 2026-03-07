@@ -5,7 +5,7 @@ import {
   ContextMenuItem,
   ContextMenuShortcut,
   ContextMenuTrigger,
-} from '@/frontend/src/components/ui/context-menu';
+} from '@src/components/ui/context-menu';
 
 export function Banner() {
   return (

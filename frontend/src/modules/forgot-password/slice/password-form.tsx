@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Button } from '@/frontend/src/components/ui/button';
+import { Button } from '@src/components/ui/button';
 
-import { InputWithLabel } from '@/frontend/src/components/feature/input-label';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/frontend/src/components/ui/card';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { InputWithLabel } from '@src/components/feature/input-label';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@src/components/ui/card';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod/v4';
 

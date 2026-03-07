@@ -1,4 +1,4 @@
-import { RegistrationModule } from '@/frontend/src/modules/registration/module';
+import { RegistrationModule } from '@src/modules/registration/module';
 
 export default function Registration() {
   return (

@@ -1,8 +1,8 @@
-import { Button } from '@/frontend/src/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/frontend/src/components/ui/card';
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@/frontend/src/components/ui/form';
-import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@/frontend/src/components/ui/input-otp';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@src/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@src/components/ui/card';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@src/components/ui/form';
+import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@src/components/ui/input-otp';
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod/v4';

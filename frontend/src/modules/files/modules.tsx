@@ -1,15 +1,15 @@
-import Test2 from '@/src/assets/file-item-test2.jpg';
-import Test from '@/src/assets/file-items-test.png';
-import folderIco from '@/src/assets/ico/folder-ico.svg';
-import mdIco from '@/src/assets/ico/md-ico.svg';
-import newFileIco from '@/src/assets/ico/new-file-ico.svg';
-import newFolderIco from '@/src/assets/ico/new-folder-ico.svg';
+import Test2 from '@src/assets/file-item-test2.jpg';
+import Test from '@src/assets/file-items-test.png';
+import folderIco from '@src/assets/ico/folder-ico.svg';
+import mdIco from '@src/assets/ico/md-ico.svg';
+import newFileIco from '@src/assets/ico/new-file-ico.svg';
+import newFolderIco from '@src/assets/ico/new-folder-ico.svg';
+import { FileContainer } from '@src/components/flows/file-container';
 import { Button } from '@src/components/ui/button';
 import { DatePicker } from '@src/components/ui/date-picker';
 import { Input } from '@src/components/ui/input';
 import { Progress } from '@src/components/ui/progress';
 import Image, { StaticImageData } from 'next/image';
-import { FileContainer } from '../../components/flows/file-container';
 import { SelectType } from './feature/select-type';
 
 export type FileItem = {
