@@ -1,5 +1,6 @@
 import Test2 from '@/src/assets/file-item-test2.jpg';
 import Test from '@/src/assets/file-items-test.png';
+import folderIco from '@/src/assets/ico/folder-ico.svg';
 import mdIco from '@/src/assets/ico/md-ico.svg';
 import newFileIco from '@/src/assets/ico/new-file-ico.svg';
 import newFolderIco from '@/src/assets/ico/new-folder-ico.svg';
@@ -11,7 +12,7 @@ import Image, { StaticImageData } from 'next/image';
 import { FileContainer } from '../../components/flows/file-container';
 import { SelectType } from './feature/select-type';
 
-type FileItem = {
+export type FileItem = {
   image: StaticImageData;
   name: string;
   expansion?: string;
@@ -43,8 +44,9 @@ const Arr: FileGroup[] = [
         expansion: 'md',
       },
       {
-        image: Test2,
+        image: folderIco,
         name: 'folder',
+        expansion: 'folder',
         files: [
           {
             image: mdIco,
@@ -58,10 +60,12 @@ const Arr: FileGroup[] = [
 ];
 
 export const FilesModule = () => {
+  const allFiles = Arr.flatMap((group) => group.data);
+
   return (
-    <div className='w-[1200px] h-[550px] bg-[#272727] rounded-[10px] p-[15px] pb-0 flex flex-col justify-between'>
+    <div className='w-[1000px] 2xl:w-[1200px] h-[550px] bg-[#272727] rounded-[10px] p-[15px] pb-0 flex flex-col justify-between'>
       <div className='w-full h-[30px] flex justify-between'>
-        <h1>Files()</h1>
+        <h1>Files({allFiles.length})</h1>
         <div className='flex gap-[30px]'>
           <DatePicker />
           <SelectType />
