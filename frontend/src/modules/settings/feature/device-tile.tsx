@@ -1,4 +1,4 @@
-import logOut from '@/src/assets/ico/log-out-ico.svg';
+import logOut from '@src/assets/ico/log-out-ico.svg';
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
 

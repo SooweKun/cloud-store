@@ -1,6 +1,6 @@
 'use client';
 
-import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from '@/frontend/src/components/ui/combobox';
+import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from '@src/components/ui/combobox';
 
 const filetype = ['English', 'Russian'] as const;
 

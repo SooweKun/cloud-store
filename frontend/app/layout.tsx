@@ -1,4 +1,4 @@
-import { FpjsProvider } from '@fingerprintjs/fingerprintjs-pro-react';
+import { TanstackProvider } from '@src/components/providers/tanstack-provider';
 import { ThemeProvider } from '@src/components/providers/theme-provider';
 import './globals.css';
 
@@ -10,15 +10,17 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <body className='bg-background'>
-        <FpjsProvider
-          loadOptions={{
-            apiKey: '5gYmTSefHz7YNrsC3aWN',
-            region: 'eu',
-          }}>
+        <TanstackProvider>
+          {/* <FpjsProvider
+            loadOptions={{
+              apiKey: '5gYmTSefHz7YNrsC3aWN',
+              region: 'eu',
+            }}> */}
           <ThemeProvider attribute='class' defaultTheme='dark' disableTransitionOnChange>
             {children}
           </ThemeProvider>
-        </FpjsProvider>
+          {/* </FpjsProvider> */}
+        </TanstackProvider>
       </body>
     </html>
   );

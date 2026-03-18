@@ -1,10 +1,12 @@
 'use client';
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { zodResolver } from '@hookform/resolvers/zod';
 import { InputWithLabel } from '@src/components/feature/input-label';
 import { Button } from '@src/components/ui/button';
+import { Skeleton } from '@src/components/ui/skeleton';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod/v4';
+import { useRegister } from '../hooks/use-reg';
+import { useRegFlowId } from '../hooks/use-reg-flow';
 
 type InputArr = {
   label: string;
@@ -16,22 +18,30 @@ type InputArr = {
 
 const Inputs: InputArr[] = [
   {
+    label: 'Name',
+    placeholder: 'Name',
+    id: 1,
+    name: 'username',
+    type: 'name',
+  },
+  {
     label: 'Email',
     placeholder: 'Email',
-    id: 1,
+    id: 2,
     name: 'email',
     type: 'email',
   },
   {
     label: 'Password',
     placeholder: 'Password',
-    id: 2,
+    id: 3,
     name: 'password',
     type: 'password',
   },
 ];
 
 const RegisterFormShema = z.object({
+  username: z.string().min(4, { message: 'Имя должно содержать минимум 4 символа' }),
   email: z.email({ message: 'Некорректный email', pattern: z.regexes.html5Email }),
   password: z
     .string()
@@ -39,7 +49,7 @@ const RegisterFormShema = z.object({
     .regex(/[0-9]/, { message: 'Пароль должен содержать хотя бы одну цифру' }),
 });
 
-type RegisterFormType = z.infer<typeof RegisterFormShema>;
+export type RegisterFormType = z.infer<typeof RegisterFormShema>; // пока тут оставлю ( тороплюсь )
 
 export const RegisterForm = () => {
   const {
@@ -50,30 +60,51 @@ export const RegisterForm = () => {
     resolver: zodResolver(RegisterFormShema),
     mode: 'onSubmit',
     defaultValues: {
+      username: '',
       email: '',
       password: '',
     },
   });
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const { mutate } = useRegister();
+  const { data: flowId, isLoading } = useRegFlowId();
+  console.log(flowId, 'flowId in Reg component');
+
+  const onSubmit = (data: RegisterFormType) => {
+    const test = {
+      ...data,
+      flow_id: flowId?.flow_id,
+    };
+    console.log(test, 'data for back ');
+
+    mutate(test);
   };
+
+  // зарефакторить скелетоны потом
 
   return (
     <form className='w-full flex flex-col gap-7 pt-10' onSubmit={handleSubmit(onSubmit)} noValidate>
       {Inputs.map(({ label, placeholder, id, name, type }) => (
-        <InputWithLabel
-          type={type}
-          label={label}
-          placeholder={placeholder}
-          key={id}
-          {...register(name as keyof RegisterFormType)}
-          errorMessage={errors[name]?.message}
-        />
+        <div key={id}>
+          {isLoading ? (
+            <div className='space-y-2'>
+              <Skeleton className='h-4 w-20' />
+              <Skeleton className='h-8 w-full' />
+            </div>
+          ) : (
+            <InputWithLabel type={type} label={label} placeholder={placeholder} {...register(name)} errorMessage={errors[name]?.message} />
+          )}
+        </div>
       ))}
-      <Button variant='secondary' className='bg-[#00C950] hover:bg-[#1A6E16] text-white font-rubik cursor-pointer' type='submit'>
-        sing in
-      </Button>
+      {isLoading ? (
+        <div className='space-y-2'>
+          <Skeleton className='h-8 w-full' />
+        </div>
+      ) : (
+        <Button variant='secondary' className='bg-[#00C950] hover:bg-[#1A6E16] text-white font-rubik cursor-pointer' type='submit'>
+          sing in
+        </Button>
+      )}
     </form>
   );
 };

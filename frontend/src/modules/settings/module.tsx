@@ -1,6 +1,6 @@
-import linuxIco from '@/src/assets/ico/linux-ico.svg';
-import phoneIco from '@/src/assets/ico/phone-ico.svg';
-import windowsIco from '@/src/assets/ico/windows-ico.svg';
+import linuxIco from '@src/assets/ico/linux-ico.svg';
+import phoneIco from '@src/assets/ico/phone-ico.svg';
+import windowsIco from '@src/assets/ico/windows-ico.svg';
 import { DeviceTile } from './feature/device-tile';
 import { SelectLanguage } from './feature/select-language';
 

@@ -1,10 +1,12 @@
 import logoIco from '@src/assets/ico/logo-ico.svg';
+import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HeaderAvatar } from '../feature/header-avatar';
 
-export const Header = () => {
-  const Auth = true;
+export const Header = async () => {
+  const cookieStore = await cookies();
+  const isRegistered = cookieStore.get('reg_complete')?.value === 'true';
 
   return (
     <div className='w-full h-[65px] bg-background overflow-hidden flex px-[70px] justify-between items-center'>
@@ -19,7 +21,7 @@ export const Header = () => {
         <Link href='/settings'>Settings</Link>
       </div>
       <div className='flex gap-[8px] text-white items-center'>
-        {Auth ? (
+        {isRegistered ? (
           <HeaderAvatar />
         ) : (
           <>
